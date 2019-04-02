@@ -1,0 +1,18 @@
+1. Crie um novo projeto com Spring Boot, usando as mesmas bibliotecas deste material.
+2. Crie uma classe para representar um período associado com sua previsão do tempo.
+Ele deverá ter as seguintes propriedades: Nome do dia na semana, temperatura
+mínima, temperatura máxima, humidade relativa do ar e um campo textual para uma
+descrição sucinta.
+3. Escreva um Controller para permitir que previsões do tempo existentes na base
+sejam listadas. Note que ainda não temos dados na base (nesta versão, ainda no H2).
+4. Escreva uma página html com uma tabela para mostrar esses campos.
+5. Cadastre, por meio de um arquivo import.sql, previsões do tempo para os próximos
+dias em uma determinada cidade. Escolha uma cidade e verifique suas previsões em
+um serviço de previsões. Dica: Use o openweathermap.org.
+6. O resultado final deverá ser uma aplicação Spring que permite a listagem de
+previsões do tempo.
+7. Crie um repositório chamado ccp3an_mca_app_previsoes e suba seu código.
+8. Gere uma release.
+9. Envie o link para seu professor de laboratório.
+10. O prazo para envio de cada tarefa é de uma semana a partir da aula em que ela foi
+apresentada.

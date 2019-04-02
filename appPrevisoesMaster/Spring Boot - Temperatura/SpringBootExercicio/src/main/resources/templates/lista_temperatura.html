@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width" />
+		<title>Previsão do Tempo</title>
+		<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+		rel="stylesheet"/>
+		<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+		rel="stylesheet"/>
+	</head>
+	
+	<body>
+		<div class="panel panel-default" style="margin: 10px">
+			<div class="panel-heading">
+				<h1 class="panel-title">Temperatura</h1>
+			</div>	
+		<form class="form-inline" method="POST" th:object="${temperatura}" th:action="@{/temperatura}" style="margin: 20px 0">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Dia da Semana"	th:field="*{diaDaSemana}"/>
+				<input type="text" class="form-control" placeholder="Temperatura Minima" th:field="*{temperaturaMinima}"/>	
+				<input type="text" class="form-control" placeholder="Temperatura Maxima" th:field="*{temperaturaMaxima}"/>
+				<input type="text" class="form-control" placeholder="Humidade do Ar" th:field="*{humidadeAr}"/>
+				<input type="text" class="form-control" placeholder="Descrição" th:field="*{descricao}"/>
+				<button type="submit" class="btn btn-primary">Adicionar</button>
+			</div>
+		</form>
+		
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Dia Da Semana</th>
+						<th>Temperatura Minima</th>
+						<th>Temperatura Maxima</th>
+						<th>Humidade do Ar</th>
+						<th>Descrição</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+				
+					<tr th:each="temperatura : ${temperaturas}">
+						<td th:text="${temperatura.diaDaSemana}"></td>
+						<td th:text="${temperatura.temperaturaMinima}"></td>
+						<td th:text="${temperatura.temperaturaMaxima}"></td>
+						<td th:text="${temperatura.humidadeAr}"></td>
+						<td th:text="${temperatura.descricao}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</div>
+	</body>
+	
+</html>
